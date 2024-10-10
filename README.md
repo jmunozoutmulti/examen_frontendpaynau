@@ -11,7 +11,8 @@ Antes de ejecutar esta aplicación, asegúrate de tener instalado lo siguiente:
 
   npm install -g @angular/cli
 
-/ExamenFrontEndPayNau
+  
+ExamenFrontEndPayNau
 ├── /src                # Código fuente de la aplicación Angular
 │   ├── /app            # Componentes, servicios y módulos de la app
 │   │   ├── app.component.ts    # Componente principal
