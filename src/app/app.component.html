@@ -1,0 +1,70 @@
+<!-- src/app/app.component.html -->
+<div class="container mt-5">
+  <h1>{{title}}</h1>
+  <h2 class="text-center text-primary">Lista de Personas</h2>
+
+  <div *ngIf="successMessage" class="alert alert-success" role="alert">
+    {{ successMessage }}
+  </div>
+  
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <table class="table table-striped">
+    <thead class="table-primary">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of persons">
+        <td>{{ person.id }}</td>
+        <td>{{ person.first_name }}</td>
+        <td>{{ person.last_name }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.phone }}</td>
+        <td>{{ person.address }}</td>
+        <td>
+          <button (click)="editPerson(person)" class="btn btn-warning btn-sm">
+            Update
+          </button>
+          <button (click)="deletePerson(person.id)" class="btn btn-danger btn-sm">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mt-4">
+    <h3 *ngIf="newPerson.id" class="text-secondary">Actualizar Persona</h3>
+    <h3 *ngIf="!newPerson.id" class="text-secondary">Agregar Persona</h3>
+    <form (ngSubmit)="newPerson.id ? updatePerson(newPerson) : addPerson()">
+      <div class="mb-3">
+        <input [(ngModel)]="newPerson.first_name" name="first_name" placeholder="Nombre" required class="form-control">
+      </div>
+      <div class="mb-3">
+        <input [(ngModel)]="newPerson.last_name" name="last_name" placeholder="Apellido" required class="form-control">
+      </div>
+      <div class="mb-3">
+        <input [(ngModel)]="newPerson.email" name="email" placeholder="Email" required class="form-control">
+      </div>
+      <div class="mb-3">
+        <input [(ngModel)]="newPerson.phone" name="phone" placeholder="Teléfono" required class="form-control">
+      </div>
+      <div class="mb-3">
+        <input [(ngModel)]="newPerson.address" name="address" placeholder="Dirección" required class="form-control">
+      </div>
+      <button type="submit" class="btn btn-success">
+        {{ newPerson.id ? 'Actualizar' : 'Agregar' }}
+      </button>
+    </form>
+  </div>
+</div>
