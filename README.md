@@ -8,7 +8,7 @@ Antes de ejecutar esta aplicación, asegúrate de tener instalado lo siguiente:
 
 - **Node.js** (versión 16 o superior): [Descargar Node.js](https://nodejs.org/)
 - **Angular CLI**: Ejecuta el siguiente comando para instalar Angular CLI:
-  ```bash
+
   npm install -g @angular/cli
 
 /ExamenFrontEndPayNau
@@ -26,7 +26,7 @@ Antes de ejecutar esta aplicación, asegúrate de tener instalado lo siguiente:
 
 ## Pasos
 Paso: 1
-git clone https://github.com/tu-usuario/ExamenFrontEndPayNau.git
+git clone https://github.com/jmunozoutmulti/examen_frontendpaynau.git
 
 Paso 2:
 cd ExamenFrontEndPayNau
